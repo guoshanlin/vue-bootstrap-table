@@ -12,9 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api/':{
-        target:'https://pmp.coreware.cn:8443/gather/',
-        //target:'http://192.168.1.248/acm/',
-        //target:'http://192.168.1.246/acm/',
+        target:'https://www.juniwota.com/',
         changeOrigin:true,
         pathRewrite:{
           '^/api/':''

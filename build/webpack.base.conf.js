@@ -31,7 +31,8 @@ module.exports = {
       'components': resolve('src/components'),
       'js': resolve('src/js'),
       'store': resolve('src/store'),
-      'view': resolve('src/view')
+      'view': resolve('src/view'),
+      'mixins': resolve('src/mixins')
     }
   },
   module: {

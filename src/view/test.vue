@@ -1,12 +1,16 @@
 <template>
   <div>
     <h3>这是一个table测试</h3>
-    <table id="table"></table>
+    <div style="padding: 20px">
+      <table id="table"></table>
+    </div>
   </div>
 </template>
 
 <script>
+  import { tableMixin } from 'mixins/tableMixin'
 export default {
+  mixins: [columnsMixin],
   name: 'HelloWorld',
   data () {
     return {
@@ -55,22 +59,52 @@ export default {
         onColumnSwitch:function (field,checked) {},
         columns: [{
           field: 'id',
-          title: 'Item ID'
+          title: 'Item ID',
+          align:'left'
         }, {
           field: 'name',
-          title: 'Item Name'
+          title: 'Item Name',
+          align:'left'
         }, {
           field: 'price',
-          title: 'Item Price'
-        }],
+          title: 'Item Price',
+          align:'left'
+        },
+          {
+            field: 'id1',
+            title: 'Item ID1',
+            align:'left'
+          }, {
+            field: 'name1',
+            title: 'Item Name1',
+            align:'left'
+          }, {
+            field: 'price1',
+            title: 'Item Price1',
+            align:'left'
+          }
+        ],
         data: [{
           id: 1,
           name: 'Item 1',
-          price: '$1'
+          price: '$1',
+          id1: 1,
+          name1: 'Item 1',
+          price1: '$1'
         }, {
           id: 2,
           name: 'Item 2',
-          price: '$2'
+          price: '$2',
+          id1: 2,
+          name1: 'Item 2',
+          price1: '$2'
+        }, {
+          id: 3,
+          name: 'Item 3',
+          price: '$3',
+          id1: 3,
+          name1: 'Item3',
+          price1: '$3'
         }]
       });
     }
