@@ -1,7 +1,7 @@
 export default {
   install (Vue, options) {
-    const preuUrl = '/qj/mice/'
-    const preuUrl2 = '/mp/'
+    const preuUrl = process.env.API  +  '/qj/mice/'
+    const preuUrl2 = process.env.API  + '/mp/'
     /**
      * 公用请求接口统一管理方法
      * @param key

@@ -49,25 +49,29 @@
           striped: true,
           pagination: true,
           singleSelect: false,
-          // sortOrder: "desc",
-          // sortName:"lastOccurrence",
+          sortOrder: "asc",
+          sortName:this.params.sort,
           showRefresh: true,
           clickToSelect: false,
           showToggle: false,
-          // pageSize: 20,
-          // pageNumber: 1,
-          // pageList: [10,20,50],
+          pageSize: 10,
+          pageNumber: 1,
+          pageList: [10,20,50],
           search: false, //不显示 搜索框
           showColumns: true, //不显示下拉框（选择显示的列）
           sidePagination: "server", //服务端请求
-          toolbar: "#tableToolbar",
+          toolbar: this.tableToolbar,
           // height: allEvents.getTableHeight(),
           columns: this.columns,
           queryParams: function (params) {
-            return $.extend({rr: parseInt(new Date().getTime())},params, this.params)
+            return $.extend({rr: parseInt(new Date().getTime())},params,this.params)
           },
           responseHandler: function (res) {
-          },//单击选中事件以及单击＋shift选中事件
+            if(res.success){
+              return res.data;
+            }
+            return []
+          },
           onClickRow: function (row, $element, field) {
             _this.$emit('change','onClickRow', {row: row, event:$element, field: field })
           },
