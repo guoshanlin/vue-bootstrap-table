@@ -12,6 +12,7 @@ export const columnsMixin = {
         limit: 20,
         offset: 1
       }
+
     }
   },
   methods: {
